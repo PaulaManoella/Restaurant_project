@@ -1,0 +1,509 @@
+@import url("https://fonts.googleapis.com/css2?family=Golos+Text&family=Raleway:wght@100;300&family=Sofia+Sans+Semi+Condensed:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Golos+Text&family=Raleway:wght@100&family=Sofia+Sans+Semi+Condensed:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Golos+Text&family=Kurale&family=Raleway:wght@100;300&family=Sofia+Sans+Semi+Condensed:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Golos+Text&family=Raleway:wght@100;300&family=Sofia+Sans+Semi+Condensed:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Golos+Text&family=Raleway:wght@100&family=Sofia+Sans+Semi+Condensed:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Golos+Text&family=Kurale&family=Raleway:wght@100;300&family=Sofia+Sans+Semi+Condensed:wght@300&display=swap");
+
+.navbar {
+  display: flex;
+  justify-content: center;
+}
+.navbar .btn-menu {
+  display: none;
+}
+.navbar ul {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  padding: 1.5rem;
+}
+.navbar ul .bars {
+  display: none;
+}
+.navbar ul li i {
+  margin-right: 10px;
+}
+.navbar ul li {
+  list-style: none;
+  font-family: "Raleway", sans-serif;
+  font-size: 1rem;
+}
+.navbar ul li a {
+  color: #000000;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: 0.15s;
+}
+.navbar ul li a:hover {
+  color: #FF7A00;
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .navbar .menu {
+    flex-direction: column;
+    position: absolute;
+    padding: 0;
+    top: 48px;
+    left: 0;
+    background: #FFEFCF;
+    text-align: center;
+    width: 100%;
+    height: 0;
+    z-index: 1;
+    visibility: hidden;
+    overflow-y: hidden;
+    transition: 0.5s;
+  }
+  .navbar .menu a {
+    padding: 1rem 0;
+    margin-inline: 1rem;
+    border-bottom: 0.0625rem solid rgba(0, 0, 0, 0.16);
+    border-radius: 0;
+  }
+  .navbar .btn-menu {
+    background: none;
+    border: none;
+    font-family: "Raleway", sans-serif;
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    display: flex;
+    width: 100%;
+    justify-content: right;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--white);
+    padding: 1rem 1rem;
+    cursor: pointer;
+  }
+  .navbar .btn-menu .bars {
+    border-top: 0.125rem solid;
+  }
+  .navbar .btn-menu .bars::after, .navbar .btn-menu .bars::before {
+    content: " ";
+    display: block;
+    width: 1.25rem;
+    height: 0.125rem;
+    background: currentColor;
+    margin-top: 0.3125rem;
+    position: relative;
+    transition: 0.3s;
+  }
+  .navbar.active .menu {
+    height: 70%;
+    visibility: visible;
+  }
+  .navbar.active .bars {
+    border-top-color: transparent;
+  }
+  .navbar.active .bars::before {
+    transform: rotate(135deg);
+  }
+  .navbar.active .bars::after {
+    transform: rotate(-135deg);
+    top: -0.4375rem;
+  }
+}
+#hero .inner-hero h2 {
+  background: url("https://www.tastingtable.com/img/gallery/20-japanese-dishes-you-need-to-try-at-least-once/intro-1664219638.webp") center no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 750px;
+  opacity: 0.3;
+}
+#hero .inner-hero::before {
+  content: "Japanese restaurant";
+  font-size: 4.56rem;
+  font-family: "Kurale", serif;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  #hero .inner-hero::before {
+    text-align: center;
+  }
+}
+#food-cards {
+  background-color: #FCF8E8;
+  padding: 5rem;
+}
+#food-cards .button {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+}
+#food-cards .button button {
+  padding: 10px 50px;
+  text-transform: uppercase;
+  background-color: #FF7A00;
+  font-weight: 500;
+  border: none;
+  padding: 15px 40px;
+  border-radius: 10px;
+  transition: 0.1s;
+}
+#food-cards .button button:hover {
+  cursor: pointer;
+  background: #FFEFCF;
+  border: 3px solid #FF7A00;
+}
+#food-cards .cards {
+  display: flex;
+  gap: 2rem;
+}
+#food-cards .cards .food:hover .overlay {
+  opacity: 1;
+  cursor: default;
+}
+#food-cards .cards .food .overlay {
+  position: relative;
+  top: -100%;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: 0.5s ease;
+  background-color: #d2e1e6;
+}
+#food-cards .cards .food .overlay .texto {
+  text-transform: uppercase;
+  color: green;
+  font-size: 20px;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+@media (max-width: 768px) {
+  #food-cards .cards {
+    flex-direction: column;
+  }
+}
+#about .about,
+#about .about-1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+}
+#about .about p,
+#about .about-1 p {
+  font-weight: bold;
+}
+#about .about .about-img,
+#about .about-1 .about-img {
+  background: url("https://images.immediate.co.uk/production/volatile/sites/30/2014/01/Seafood-okonomiyaki-8d76c73.jpg?quality=90&webp=true&fit=1100,733") no-repeat;
+  min-height: 550px;
+  background-size: cover;
+  background-attachment: fixed;
+}
+#about .about .about-content .about-text,
+#about .about-1 .about-content .about-text {
+  justify-self: center;
+  text-align: center;
+}
+#about .about .about-content .about-text h3, #about .about .about-content .about-text h5, #about .about .about-content .about-text .dias p,
+#about .about-1 .about-content .about-text h3,
+#about .about-1 .about-content .about-text h5,
+#about .about-1 .about-content .about-text .dias p {
+  text-transform: uppercase;
+}
+#about .about .about-content .about-text h3,
+#about .about-1 .about-content .about-text h3 {
+  margin-top: 4rem;
+  font-size: 3.84rem;
+  font-weight: 400;
+}
+#about .about .about-content .about-text h4,
+#about .about-1 .about-content .about-text h4 {
+  font-size: 1.8rem;
+  color: #D44000;
+  margin: 10px 0 40px;
+  font-weight: 600;
+}
+#about .about .about-content .about-text h5,
+#about .about-1 .about-content .about-text h5 {
+  font-size: 1.2rem;
+  color: #FF7A00;
+  margin-bottom: 15px;
+}
+#about .about .about-content .about-text .dias-horarios,
+#about .about-1 .about-content .about-text .dias-horarios {
+  margin-top: 10px;
+  display: grid;
+  justify-content: center;
+  -moz-column-gap: 2rem;
+       column-gap: 2rem;
+  grid-template-areas: "dias horarios" "dias horarios";
+}
+#about .about .about-content .about-text .dias,
+#about .about-1 .about-content .about-text .dias {
+  grid-area: dias;
+}
+#about .about .about-content .about-text .horarios,
+#about .about-1 .about-content .about-text .horarios {
+  grid-area: horarios;
+}
+#about .about .about-content .about-text .phone,
+#about .about-1 .about-content .about-text .phone {
+  margin-top: 3rem;
+}
+#about .about .about-content .button,
+#about .about-1 .about-content .button {
+  display: flex;
+  justify-content: center;
+}
+#about .about .about-content .button button,
+#about .about-1 .about-content .button button {
+  margin: 2rem 0 2rem;
+  background-color: #FF7A00;
+  text-transform: uppercase;
+  font-weight: 500;
+  border: none;
+  padding: 15px 40px;
+  border-radius: 10px;
+  transition: 0.1s;
+}
+#about .about .about-content .button button:hover,
+#about .about-1 .about-content .button button:hover {
+  cursor: pointer;
+  background: #FFEFCF;
+  border: 3px solid #FF7A00;
+}
+
+.about-1 {
+  grid-template-areas: "about-text about-img" "about-text about-img";
+}
+.about-1 .about-img {
+  grid-area: about-img;
+}
+.about-1 .about-text {
+  grid-area: about-text;
+}
+.about-1 .about-text a {
+  color: #0F0E0E;
+}
+
+@media (max-width: 768px) {
+  #about .about {
+    height: 620px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    padding: 2rem 0;
+  }
+  #about .about .about-content {
+    position: relative;
+    padding: 0 1.2rem;
+  }
+  #about .about .about-content::before {
+    content: "";
+    background-image: url("https://images.immediate.co.uk/production/volatile/sites/30/2014/01/Seafood-okonomiyaki-8d76c73.jpg?quality=90&webp=true&fit=1100,733");
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0.15;
+  }
+  #about .about .about-content .button {
+    position: relative;
+  }
+  #about .about .about-content .about-text h3 {
+    font-size: 3.24rem;
+  }
+  #about .about .about-content .about-text h4 {
+    font-size: 1.56rem;
+  }
+  #about .about .about-content .about-text h5 {
+    color: #FF7A00;
+    font-weight: 900;
+  }
+  #about .about .about-img {
+    display: none;
+  }
+}
+#relatos-clientes {
+  height: 650px;
+  background: #FCF8E8;
+}
+#relatos-clientes .relatos {
+  display: flex;
+  justify-content: center;
+  height: inherit;
+}
+#relatos-clientes .relatos .card {
+  width: 20%;
+  background: white;
+  align-items: center;
+  margin: 2rem;
+  padding: 2rem;
+}
+#relatos-clientes .relatos .card h4, #relatos-clientes .relatos .card p {
+  display: block;
+  margin-top: 18px;
+}
+#relatos-clientes .relatos .card h4 {
+  font-size: 1.98rem;
+  color: #D44000;
+}
+#relatos-clientes .relatos .card p {
+  font-family: "Golos Text", sans-serif;
+  font-weight: 400;
+}
+#relatos-clientes .relatos .card .relatos-content {
+  text-align: center;
+  height: 100%;
+  flex-direction: column;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+@media (max-width: 946px) {
+  #relatos-clientes {
+    height: 100%;
+    background: #FCF8E8;
+  }
+  #relatos-clientes .relatos {
+    flex-direction: column;
+  }
+  #relatos-clientes .relatos .card {
+    width: auto;
+    height: auto;
+    margin: 1.5rem 0;
+  }
+  #relatos-clientes .relatos .card .relatos-content h4 {
+    font-size: 1.56rem;
+    font-weight: 800;
+  }
+}
+/*@media screen and (min-width: 975px){
+    #relatos-clientes{
+        .relatos{
+            flex-direction: column;
+
+            .card{width: auto;}
+        }
+    }
+}*/
+#social-medias {
+  height: 80vh;
+}
+#social-medias .sm-icons {
+  height: 100%;
+  position: relative;
+}
+#social-medias .sm-icons::before {
+  content: "";
+  background-image: url("https://images.unsplash.com/photo-1568018508399-e53bc8babdde?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1174&q=80");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: bottom;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0.28;
+}
+#social-medias .sm-icons ul {
+  height: 100%;
+  flex-direction: column;
+  padding: 0;
+  gap: 1.3rem;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+#social-medias .sm-icons ul h3 {
+  font-size: 2.22rem;
+  text-align: center;
+}
+#social-medias .sm-icons ul li {
+  width: 100%;
+  display: flex;
+  gap: 3rem;
+  justify-content: center;
+}
+#social-medias .sm-icons ul li i {
+  font-size: 30px;
+  position: relative;
+}
+#social-medias .sm-icons ul li .fa-facebook {
+  color: rgb(25, 25, 99);
+}
+#social-medias .sm-icons ul li .fa-instagram {
+  color: rgb(197, 38, 157);
+  font-weight: 600;
+}
+#social-medias .sm-icons ul li .fa-twitter {
+  color: rgb(62, 150, 222);
+}
+
+footer {
+  padding: 3rem 0 1.3rem;
+  background: #FFEFCF;
+}
+footer .text-footer {
+  font-size: 0.7741935484rem;
+  text-align: center;
+  font-family: "Golos Text", sans-serif;
+}
+footer .text-footer h3, footer .text-footer p {
+  font-weight: 300;
+}
+footer .text-footer p {
+  margin-top: 20px;
+}
+footer .text-footer h3:first-child {
+  text-transform: uppercase;
+}
+footer .text-footer ul {
+  display: flex;
+  justify-content: center;
+  gap: 5rem;
+  margin-top: 20px;
+}
+footer .text-footer ul li {
+  font-family: "Golos Text", sans-serif;
+  text-transform: uppercase;
+  font-size: 0.9230769231rem;
+}
+footer .text-footer ul li a {
+  text-decoration: none;
+  color: #000;
+}
+footer .text-footer ul li a:hover {
+  color: #FF7A00;
+}
+
+@media screen and (max-width: 768px) {
+  footer .text-footer ul {
+    padding: 0;
+    gap: 10px;
+  }
+}
+body {
+  font-family: "Raleway", sans-serif;
+  color: #0F0E0E;
+}
+body p {
+  font-weight: 800;
+}
+body li {
+  list-style: none;
+}
+
+body, ul, h2, h3, h4, h5, p {
+  margin: 0;
+}/*# sourceMappingURL=style.css.map */

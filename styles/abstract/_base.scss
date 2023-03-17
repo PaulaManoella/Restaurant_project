@@ -1,0 +1,10 @@
+@import '../components/variaveis';
+
+body{
+    font-family: $fonte-principal;
+    color: $first-color;
+
+    p{font-weight: 800;}
+
+    li{list-style: none;}
+}

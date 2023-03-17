@@ -1,0 +1,142 @@
+#about {
+
+    .about,
+    .about-1 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+
+       p {font-weight: bold;}
+
+        .about-img {
+            background: url('https://images.immediate.co.uk/production/volatile/sites/30/2014/01/Seafood-okonomiyaki-8d76c73.jpg?quality=90&webp=true&fit=1100,733') no-repeat;
+            min-height: 550px;
+            background-size: cover;
+            background-attachment: fixed;}
+
+        .about-content {
+            .about-text {
+                justify-self: center;
+                text-align: center;
+
+                h3, h5, .dias p{
+                    text-transform: uppercase;}
+
+                h3 {
+                    margin-top: 4rem;
+                    font-size: $tamanho-padrao*3.2;
+                    font-weight: 400;}
+
+                h4 {
+                    font-size: $tamanho-padrao*1.5;
+                    color: $second-color;
+                    margin: 10px 0 40px;
+                    font-weight: 600;}
+
+                h5 {font-size: $tamanho-padrao;
+                    color:$third-color;
+                    margin-bottom: 15px}
+                
+                .dias-horarios {
+                    margin-top: 10px;
+                    display: grid;
+                    justify-content: center;
+                    column-gap: 2rem;
+                    grid-template-areas:
+                        "dias horarios"
+                        "dias horarios";}
+            
+                .dias {
+                    grid-area: dias;}
+
+                .horarios {
+                    grid-area: horarios;}
+
+                .phone {
+                    margin-top: 3rem;}}
+
+            .button {
+                display: flex;
+                justify-content: center;
+
+                button {
+                    margin: 2rem 0 2rem;
+                    background-color: $third-color;
+                    text-transform: uppercase;
+                    font-weight: 500;
+                    border: none;
+                    padding: 15px 40px;
+                    border-radius: 10px;
+                    transition: 0.1s;
+
+                    &:hover {
+                        cursor: pointer;
+                        background: $fourth-color;
+                        border: 3px solid $third-color;
+                    }}}
+
+        }}
+}
+
+//ABOUT-1 grid template
+.about-1 {
+    grid-template-areas:
+        "about-text about-img"
+        "about-text about-img";
+
+    .about-img {
+        grid-area: about-img;}
+
+    .about-text {
+        grid-area: about-text;
+
+        a{ color: $first-color;}}
+}
+
+//MOBILE
+@media (max-width: 768px) {
+    #about {
+        .about {
+            height: 620px;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr;
+            padding: 2rem 0;
+
+            //about background
+            .about-content {
+                position: relative;
+                padding: 0 1.2rem;
+
+                &::before {
+                    content: "";
+                    background-image: url('https://images.immediate.co.uk/production/volatile/sites/30/2014/01/Seafood-okonomiyaki-8d76c73.jpg?quality=90&webp=true&fit=1100,733');
+                    background-size: cover;
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                    opacity: 0.15;
+                }
+
+                .button {position: relative;}
+
+                .about-text{
+                    h3{
+                        font-size: $tamanho-padrao*2.7;
+                    }
+
+                    h4{font-size: $tamanho-padrao*1.3;}
+
+                    h5{
+                        color:$third-color;
+                        font-weight:900;
+                    }
+                }
+            }
+
+            .about-img {
+                display: none;}
+
+        }}
+}
